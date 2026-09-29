@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -21,7 +21,7 @@
     }
 
     .container {
-      max-width: 720px;
+      max-width: 740px;
       width: 100%;
       text-align: center;
     }
@@ -43,7 +43,7 @@
       background-color: #1e293b;
       border: 1px solid #334155;
       border-radius: 10px;
-      padding: 16px 20px;
+      padding: 18px 20px;
       text-align: left;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25);
     }
@@ -64,7 +64,7 @@
       color: #ffffff;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.98rem;
       line-height: 1.35;
       text-align: center;
       transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
@@ -83,20 +83,12 @@
       justify-content: center;
       gap: 6px;
       padding: 0 16px;
-      background-color: #334155;
-      color: #e2e8f0;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 600;
       border-radius: 6px;
       white-space: nowrap;
-      border: 1px solid #475569;
       transition: background-color 0.15s ease, transform 0.15s ease;
-    }
-
-    .btn-download:hover {
-      background-color: #475569;
-      color: #ffffff;
     }
 
     .download-icon {
@@ -106,18 +98,37 @@
     }
 
     .summary {
-      margin: 10px 0 0 2px;
+      margin: 12px 0 0 2px;
       font-size: 0.92rem;
       line-height: 1.5;
       color: #94a3b8;
     }
 
-    /* Distinct functional color coding */
-    .btn-blue     { background-color: #1d4ed8; }
-    .btn-emerald  { background-color: #047857; }
-    .btn-indigo   { background-color: #4338ca; }
-    .btn-teal     { background-color: #0f766e; }
-    .btn-rose     { background-color: #be123c; }
+    /* 5 Distinct Color Schemes */
+    /* 1. Sapphire Blue */
+    .btn-blue { background-color: #1d4ed8; }
+    .dl-blue { background-color: #1e3a8a; border: 1px solid #2563eb; color: #bfdbfe; }
+    .dl-blue:hover { background-color: #2563eb; color: #ffffff; }
+
+    /* 2. Emerald Green */
+    .btn-emerald { background-color: #047857; }
+    .dl-emerald { background-color: #064e3b; border: 1px solid #059669; color: #a7f3d0; }
+    .dl-emerald:hover { background-color: #059669; color: #ffffff; }
+
+    /* 3. Deep Violet */
+    .btn-purple { background-color: #6d28d9; }
+    .dl-purple { background-color: #4c1d95; border: 1px solid #7c3aed; color: #ddd6fe; }
+    .dl-purple:hover { background-color: #7c3aed; color: #ffffff; }
+
+    /* 4. Deep Teal */
+    .btn-teal { background-color: #0f766e; }
+    .dl-teal { background-color: #134e4a; border: 1px solid #0d9488; color: #99f6e4; }
+    .dl-teal:hover { background-color: #0d9488; color: #ffffff; }
+
+    /* 5. Rich Crimson / Rose */
+    .btn-rose { background-color: #be123c; }
+    .dl-rose { background-color: #881337; border: 1px solid #e11d48; color: #fecdd3; }
+    .dl-rose:hover { background-color: #e11d48; color: #ffffff; }
 
     /* Footer / Contact Section */
     .footer {
@@ -205,7 +216,7 @@
 
     <div class="card-list">
 
-      <!-- Case Study 1 -->
+      <!-- Case Study 1: Blue -->
       <div class="card">
         <div class="button-group">
           <a href="./Case%20Study%201%20-%20Network%20Modernization%20%26%20AI%20Security.pdf" 
@@ -216,18 +227,18 @@
           </a>
           <a href="./Case%20Study%201%20-%20Network%20Modernization%20%26%20AI%20Security.pdf" 
              download="Case Study 1 - Network Modernization &amp; AI Security.pdf" 
-             class="btn-download" 
+             class="btn-download dl-blue" 
              title="Download PDF">
             <svg class="download-icon" viewBox="0 0 20 20">
               <path d="M10 2a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 11.586V3a1 1 0 0 1 1-1zm-7 13a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z"/>
             </svg>
-            PDF
+            Download
           </a>
         </div>
         <p class="summary">Modernized core network infrastructure with AI-driven threat detection to eliminate legacy vulnerabilities and deliver automated perimeter protection.</p>
       </div>
 
-      <!-- Case Study 2 -->
+      <!-- Case Study 2: Emerald -->
       <div class="card">
         <div class="button-group">
           
@@ -237,13 +248,13 @@
             <svg class="download-icon" viewBox="0 0 20 20">
               <path d="M10 2a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 11.586V3a1 1 0 0 1 1-1zm-7 13a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z"/>
             </svg>
-            PDF
+            Download
           </a>
         </div>
         <p class="summary">Implemented Zero Trust micro-segmentation and Microsoft Entra ID hardening to halt lateral movement and enforce granular conditional access policies.</p>
       </div>
 
-      <!-- Case Study 3 -->
+      <!-- Case Study 3: Purple -->
       <div class="card">
         <div class="button-group">
           
@@ -253,13 +264,13 @@
             <svg class="download-icon" viewBox="0 0 20 20">
               <path d="M10 2a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 11.586V3a1 1 0 0 1 1-1zm-7 13a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z"/>
             </svg>
-            PDF
+            Download
           </a>
         </div>
         <p class="summary">Replaced flat network architectures with strict least-privilege access and resilient identity controls to drastically shrink the enterprise attack surface.</p>
       </div>
 
-      <!-- Case Study 4 -->
+      <!-- Case Study 4: Teal -->
       <div class="card">
         <div class="button-group">
           <a href="./Case%20Study%204%20-%20Multi-Level%20Estate%20Wireless%20Overhaul.pdf" 
@@ -270,27 +281,11 @@
           </a>
           <a href="./Case%20Study%204%20-%20Multi-Level%20Estate%20Wireless%20Overhaul.pdf" 
              download="Case Study 4 - Multi-Level Estate Wireless Overhaul.pdf" 
-             class="btn-download" 
+             class="btn-download dl-teal" 
              title="Download PDF">
             <svg class="download-icon" viewBox="0 0 20 20">
               <path d="M10 2a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 11.586V3a1 1 0 0 1 1-1zm-7 13a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z"/>
             </svg>
-            PDF
+            Download
           </a>
         </div>
-        <p class="summary">Engineered high-density, multi-floor enterprise Wi-Fi coverage with zero dead zones and seamless roaming across high-interference environments.</p>
-      </div>
-
-      <!-- Case Study 5 -->
-      <div class="card">
-        <div class="button-group">
-          <a href="./Case%20Study%205%20-%20Residential%20Safety%20Monitoring%20%26%20Executive%20Privacy.pdf" 
-             class="btn-main btn-rose" 
-             target="_blank" 
-             rel="noopener noreferrer">
-            Case Study 5 - Residential Safety Monitoring &amp; Executive Privacy
-          </a>
-          <a href="./Case%20Study%205%20-%20Residential%20Safety%20Monitoring%20%26%20Executive%20Privacy.pdf" 
-             download="Case Study 5 - Residential Safety Monitoring &amp; Executive Privacy.pdf" 
-             class="btn-download" 
-             title="Download PDF">
