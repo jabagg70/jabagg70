@@ -1,4 +1,4 @@
-## Hi there 👋
+## Case Studies 2014-2026 👋
 
 <!--
 **jabagg70/jabagg70** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
