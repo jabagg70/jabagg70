@@ -1,65 +1,201 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jonathan Bagg - Case Studies</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
-      padding: 40px 20px;
+      padding: 48px 16px;
       background-color: #0f172a;
       color: #f8fafc;
       display: flex;
       justify-content: center;
+      min-height: 100vh;
     }
 
     .container {
-      max-width: 680px;
+      max-width: 720px;
       width: 100%;
       text-align: center;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 2rem;
       color: #ffffff;
       letter-spacing: -0.5px;
     }
 
-    .btn-list {
+    .card-list {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
     }
 
-    .btn {
-      display: block;
+    .card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
       padding: 16px 20px;
-      border-radius: 8px;
+      text-align: left;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .btn-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 6px;
       color: #ffffff;
       text-decoration: none;
       font-weight: 600;
       font-size: 1rem;
-      line-height: 1.4;
+      line-height: 1.35;
       text-align: center;
       transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
-    .btn:hover {
+    .btn-main:hover, .btn-download:hover {
       opacity: 0.92;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.4);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.35);
     }
 
-    /* Distinct functional color palette for rapid visual parsing */
-    .btn-blue     { background-color: #1d4ed8; } /* Case Study 1: Modernization & AI */
-    .btn-emerald  { background-color: #047857; } /* Case Study 2: Micro-Segmentation & Entra */
-    .btn-indigo   { background-color: #4338ca; } /* Case Study 3: Zero Trust & Identity */
-    .btn-teal     { background-color: #0f766e; } /* Case Study 4: Wireless Overhaul */
-    .btn-rose     { background-color: #be123c; } /* Case Study 5: Safety & Executive Privacy */
+    .btn-download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 0 16px;
+      background-color: #334155;
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 6px;
+      white-space: nowrap;
+      border: 1px solid #475569;
+      transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .btn-download:hover {
+      background-color: #475569;
+      color: #ffffff;
+    }
+
+    .download-icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .summary {
+      margin: 10px 0 0 2px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: #94a3b8;
+    }
+
+    /* Distinct functional color coding */
+    .btn-blue     { background-color: #1d4ed8; }
+    .btn-emerald  { background-color: #047857; }
+    .btn-indigo   { background-color: #4338ca; }
+    .btn-teal     { background-color: #0f766e; }
+    .btn-rose     { background-color: #be123c; }
+
+    /* Footer / Contact Section */
+    .footer {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid #334155;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer h2 {
+      font-size: 1.25rem;
+      margin: 0;
+      color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 24px;
+      font-size: 0.95rem;
+      color: #94a3b8;
+    }
+
+    .contact-items a {
+      color: #38bdf8;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .contact-items a:hover {
+      color: #7dd3fc;
+      text-decoration: underline;
+    }
+
+    .btn-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #0a66c2;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.15s ease, transform 0.15s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      margin-top: 4px;
+    }
+
+    .btn-linkedin:hover {
+      background-color: #004182;
+      transform: translateY(-1px);
+    }
+
+    .linkedin-icon {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 580px) {
+      .button-group {
+        flex-direction: column;
+      }
+      .btn-download {
+        padding: 10px;
+      }
+      .contact-items {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -67,38 +203,94 @@
   <div class="container">
     <h1>Jonathan Bagg - Case Studies</h1>
 
-    <div class="btn-list">
-      <a href="./Case%20Study%201%20-%20Network%20Modernization%20%26%20AI%20Security.pdf" 
-         class="btn btn-blue" 
-         target="_blank" 
-         rel="noopener noreferrer">
-        Case Study 1 - Network Modernization &amp; AI Security
-      </a>
+    <div class="card-list">
 
-      
-        Case Study 2 - Zero Trust Micro-Segmentation &amp; ENTRA ID Identity Hardening
-      </a>
+      <!-- Case Study 1 -->
+      <div class="card">
+        <div class="button-group">
+          <a href="./Case%20Study%201%20-%20Network%20Modernization%20%26%20AI%20Security.pdf" 
+             class="btn-main btn-blue" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            Case Study 1 - Network Modernization &amp; AI Security
+          </a>
+          <a href="./Case%20Study%201%20-%20Network%20Modernization%20%26%20AI%20Security.pdf" 
+             download="Case Study 1 - Network Modernization &amp; AI Security.pdf" 
+             class="btn-download" 
+             title="Download PDF">
+            <svg class="download-icon" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 11.586V3a1 1 0 0 1 1-1zm-7 13a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z"/>
+            </svg>
+            PDF
+          </a>
+        </div>
+        <p class="summary">Modernized core network infrastructure with AI-driven threat detection to eliminate legacy vulnerabilities and deliver automated perimeter protection.</p>
+      </div>
 
-      
-        Case Study 3 - Zero Trust &amp; Identity Hardening
-      </a>
+      <!-- Case Study 2 -->
+      <div class="card">
+        <div class="button-group">
+          
+            Case Study 2 - Zero Trust Micro-Segmentation &amp; ENTRA ID Identity Hardening
+          </a>
+          
+            <svg class="download-icon" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 11.586V3a1 1 0 0 1 1-1zm-7 13a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z"/>
+            </svg>
+            PDF
+          </a>
+        </div>
+        <p class="summary">Implemented Zero Trust micro-segmentation and Microsoft Entra ID hardening to halt lateral movement and enforce granular conditional access policies.</p>
+      </div>
 
-      <a href="./Case%20Study%204%20-%20Multi-Level%20Estate%20Wireless%20Overhaul.pdf" 
-         class="btn btn-teal" 
-         target="_blank" 
-         rel="noopener noreferrer">
-        Case Study 4 - Multi-Level Estate Wireless Overhaul
-      </a>
+      <!-- Case Study 3 -->
+      <div class="card">
+        <div class="button-group">
+          
+            Case Study 3 - Zero Trust &amp; Identity Hardening
+          </a>
+          
+            <svg class="download-icon" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 11.586V3a1 1 0 0 1 1-1zm-7 13a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z"/>
+            </svg>
+            PDF
+          </a>
+        </div>
+        <p class="summary">Replaced flat network architectures with strict least-privilege access and resilient identity controls to drastically shrink the enterprise attack surface.</p>
+      </div>
 
-      <a href="./Case%20Study%205%20-%20Residential%20Safety%20Monitoring%20%26%20Executive%20Privacy.pdf" 
-         class="btn btn-rose" 
-         target="_blank" 
-         rel="noopener noreferrer">
-        Case Study 5 - Residential Safety Monitoring &amp; Executive Privacy
-      </a>
-    </div>
-  </div>
+      <!-- Case Study 4 -->
+      <div class="card">
+        <div class="button-group">
+          <a href="./Case%20Study%204%20-%20Multi-Level%20Estate%20Wireless%20Overhaul.pdf" 
+             class="btn-main btn-teal" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            Case Study 4 - Multi-Level Estate Wireless Overhaul
+          </a>
+          <a href="./Case%20Study%204%20-%20Multi-Level%20Estate%20Wireless%20Overhaul.pdf" 
+             download="Case Study 4 - Multi-Level Estate Wireless Overhaul.pdf" 
+             class="btn-download" 
+             title="Download PDF">
+            <svg class="download-icon" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 11.586V3a1 1 0 0 1 1-1zm-7 13a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z"/>
+            </svg>
+            PDF
+          </a>
+        </div>
+        <p class="summary">Engineered high-density, multi-floor enterprise Wi-Fi coverage with zero dead zones and seamless roaming across high-interference environments.</p>
+      </div>
 
-</body>
-</html>
-
+      <!-- Case Study 5 -->
+      <div class="card">
+        <div class="button-group">
+          <a href="./Case%20Study%205%20-%20Residential%20Safety%20Monitoring%20%26%20Executive%20Privacy.pdf" 
+             class="btn-main btn-rose" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            Case Study 5 - Residential Safety Monitoring &amp; Executive Privacy
+          </a>
+          <a href="./Case%20Study%205%20-%20Residential%20Safety%20Monitoring%20%26%20Executive%20Privacy.pdf" 
+             download="Case Study 5 - Residential Safety Monitoring &amp; Executive Privacy.pdf" 
+             class="btn-download" 
+             title="Download PDF">
